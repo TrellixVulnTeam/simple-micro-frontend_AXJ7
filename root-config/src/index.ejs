@@ -31,6 +31,8 @@
 
     More information about shared dependencies can be found at https://single-spa.js.org/docs/recommended-setup#sharing-with-import-maps.
   -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <script type="systemjs-importmap">
     {
       "imports": {
@@ -47,8 +49,11 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
-        "@ts/root-config": "//localhost:9000/ts-root-config.js"
+        "@ts/root-config": "//localhost:9000/ts-root-config.js",
+        "@ts/app-store": "//localhost:9001/ts-app-store.js",
+        "@ts/app-store": "//localhost:9002/ts-app-product.js",
+        "@ts/navigation": "//localhost:9003/ts-app-product.js",
+        "@ts/utils": "//localhost:9004/ts-app-product.js"
       }
     }
   </script>
