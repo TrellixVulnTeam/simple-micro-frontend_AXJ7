@@ -13,8 +13,16 @@ const applications = constructApplications({
     return System.import(name);
   },
 });
-const layoutEngine = constructLayoutEngine({ routes, applications });
+const layoutEngine = constructLayoutEngine({
+  routes,
+  applications,
+  active: false,
+});
 
 applications.forEach(registerApplication);
-layoutEngine.activate();
-start();
+
+System.import("@ts/utils").then(() => {
+  // Activate the layout engine once the styleguide CSS is loaded
+  layoutEngine.activate();
+  start();
+});

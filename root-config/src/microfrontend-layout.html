@@ -18,8 +18,19 @@
   -->
 
   <main>
-    <route default>
-      <application name="@single-spa/welcome"></application>
+      <div class="p-2 border-b border-black text-xl">Micro - Frontend</div>
+      <div class="flex flex-row min-w h-screen">
+        <div class="w-40 px-2 border-r border-black"><application name="@ts/navigation"></application></div>
+        <route path="react">
+          <div class="flex-1 w-64 px-2">
+            <application name="@ts/app-store"></application>
+          </div>
+        </route>
+        
+        <div class="flex-1 w-32 px-2">
+          <application name="@ts/app-product"></application>
+        </div>
+      </div>
     </route>
   </main>
 </single-spa-router>
