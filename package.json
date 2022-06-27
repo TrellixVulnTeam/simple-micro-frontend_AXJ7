@@ -3,5 +3,12 @@
   "private": true,
   "dependencies": {
     "lerna": "^4.0.0"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "start": "lerna run start --stream",
+    "prebuild": "rm -rf deploy && mkdir deploy deploy/navigation deploy/app-store deploy/app-product deploy/utils deploy/navigation",
+    "build": "lerna run build",
+    "postbuild": "cp netlify.toml deploy && cp packages/root-config/dist/* deploy && cp packages/navigation/dist/* deploy/navigation && cp packages/utils/dist/* deploy/utils && cp packages/app-store/dist/* deploy/app-store && cp packages/app-product/dist/* deploy/app-product"
   }
 }

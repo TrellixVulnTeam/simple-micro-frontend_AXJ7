@@ -59,7 +59,22 @@
       }
     }
   </script>
-  <% } %>
+  <% } else { %>
+    <script type="systemjs-importmap">
+        {
+          "imports": {
+            "@ts/root-config": "/ts-root-config.js",
+            "@ts/app-store": "/ts-app-store.js",
+            "@ts/app-product": "/ts-app-product.js",
+            "@ts/navigation": "/ts-navigation.js",
+            "@ts/utils": "/ts-utils.js",
+            "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js",
+            "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js"
+          }
+        }
+      </script>
+    <% } %>
+
 
   <!--
     If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
